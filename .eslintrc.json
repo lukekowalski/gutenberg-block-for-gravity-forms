@@ -19,7 +19,7 @@
 	"globals": {
 		"wp": true,
 		"wpApiSettings": true,
-		"gfgbGlobals": true,
+		"gbgfGlobals": true,
 		"window": true,
 		"document": true
 	},

@@ -1,6 +1,4 @@
 === Plugin Name ===
-Contributors: 'wpjsio'
-
 Tags: gutenberg, contact form, block, gravity forms, contact, email
 Requires at least: 4.7
 Tested up to: 4.9.2

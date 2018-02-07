@@ -5,9 +5,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Silence is golden.' );
 }
 
-if ( ! class_exists( 'GFGB_GravityForms_Gutenberg_Block' ) ) {
+if ( ! class_exists( 'GBGF_GravityForms_Gutenberg_Block' ) ) {
 
-	class GFGB_GravityForms_Gutenberg_Block {
+	class GBGF_GravityForms_Gutenberg_Block {
 
 		private static $instance = null;
 		private $authenticate    = null;
@@ -22,7 +22,7 @@ if ( ! class_exists( 'GFGB_GravityForms_Gutenberg_Block' ) ) {
 
 		private function __construct() {
 			require_once dirname(__FILE__) . '/class-gravityforms-webapi-authentication.php';
-			$this->authenticate = new GFGB_GravityForms_Webapi_Authentication();
+			$this->authenticate = new GBGF_GravityForms_Webapi_Authentication();
 
 			add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_backend_assets' ] );
 			add_action( 'init', [ $this, 'register_gravityforms_block'] );
@@ -30,13 +30,13 @@ if ( ! class_exists( 'GFGB_GravityForms_Gutenberg_Block' ) ) {
 
 		public function enqueue_backend_assets() {
 			wp_enqueue_script(
-				'gfgb-gravityforms-block',
+				'gbgf-gravityforms-block',
 				plugins_url( 'dist/assets/js/backend.blocks.js', __DIR__ ),
 				['wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-api'],
 				$this->get_plugin_version()
 			);
 
-			wp_localize_script( 'gfgb-gravityforms-block', 'gfgbGlobals', [
+			wp_localize_script( 'gbgf-gravityforms-block', 'gbgfGlobals', [
 				// camelCase because will be used in JS
 				'gravityformsWebapiResponse' => $this->authenticate->get_all_forms(),
 			] );

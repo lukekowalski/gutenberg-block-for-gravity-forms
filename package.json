@@ -1,8 +1,8 @@
 {
-  "name": "gravityforms-gutenberg",
+  "name": "gf-gutenberg",
   "version": "1.0.0",
   "license": "GPL-2.0-or-later",
-  "repository": "git+https://github.com/wpjsio/gravityforms-gutenberg.git",
+  "repository": "git+https://github.com/wpjsio/gutenberg-block-for-gravity-forms",
   "keywords": [
     "WordPress",
     "Gravity Forms",

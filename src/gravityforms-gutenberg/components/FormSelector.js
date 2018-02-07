@@ -6,7 +6,7 @@ const { TextControl, SelectControl, ToggleControl } = InspectorControls;
 const FormSelector = ( props ) => {
 	const { focus, attributes, setAttributes, className } = props;
 	const { formID, formTitle, formDescription, formTabIndex, useAjax, fieldValues } = attributes;
-	const { gravityformsWebapiResponse } = gfgbGlobals;
+	const { gravityformsWebapiResponse } = gbgfGlobals;
 	const options = [
 		{ value: 0, label: __( 'Select Form' ) },
 	];

@@ -5,9 +5,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Silence is golden.' );
 }
 
-if ( ! class_exists( 'GFGB_GravityForms_Webapi_Authentication' ) ) {
+if ( ! class_exists( 'GBGF_GravityForms_Webapi_Authentication' ) ) {
 
-	class GFGB_GravityForms_Webapi_Authentication {
+	class GBGF_GravityForms_Webapi_Authentication {
 
 		public function get_all_forms() {
 			return $this->authenticate_gravityforms_webapi();
@@ -24,7 +24,7 @@ if ( ! class_exists( 'GFGB_GravityForms_Webapi_Authentication' ) ) {
 			if ( ! intval($gravityforms_webapi['enabled']) === 1 ) {
 				return [
 					'error'   => true,
-					'details' => __( 'Gravity Forms Web API is not enabled.', 'gravityforms-gutenberg' ),
+					'details' => __( 'Gravity Forms Web API is not enabled.', 'gf-gutenberg' ),
 				];
 			}
 
@@ -45,7 +45,7 @@ if ( ! class_exists( 'GFGB_GravityForms_Webapi_Authentication' ) ) {
 				//http request failed
 				return [
 					'error'   => true,
-					'details' => __( 'There was an error attempting to access the API. Please check your settings or refresh the page.', 'gravityforms-gutenberg' ),
+					'details' => __( 'There was an error attempting to access the API. Please check your settings or refresh the page.', 'gf-gutenberg' ),
 				];
 			}
 
@@ -55,7 +55,7 @@ if ( ! class_exists( 'GFGB_GravityForms_Webapi_Authentication' ) ) {
 			if ( $body['status'] > 202 ) {
 				return [
 					'status'  => 'error',
-					'details' => __( 'Could not retrieve forms. Please check your settings or refresh the page.', 'gravityforms-gutenberg' ),
+					'details' => __( 'Could not retrieve forms. Please check your settings or refresh the page.', 'gf-gutenberg' ),
 				];
 			}
 
